@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Group Evaluation List</title>
+    <link rel="stylesheet" href="{% static 'css/tablepage.css' %}">
+</head>
+<body>
+    <h1>Group Evaluation List</h1>
+
+    <div class="table-container">
+        <div class="header">
+            <button class="button-62" role="button">
+                <a href="{% url 'ty_evaluation_new' %}">Add New Evaluation</a>
+            </button>
+            <div class="form-container">
+                <form method="GET" action="{% url 'ty_filter_evaluations' %}">
+                    <div class="branch">
+                        <label class="branch_label" for="branch">Select Branch:</label>
+                        <select name="branch" id="branch">
+                            <option value="">--Select Branch--</option>
+                            <option value="IT" {% if selected_branch == 'IT' %}selected{% endif %}>IT</option>
+                            <option value="COMPS" {% if selected_branch == 'COMPS' %}selected{% endif %}>COMPS</option>
+                            <option value="AIDS" {% if selected_branch == 'AIDS' %}selected{% endif %}>AIDS</option>
+                            <option value="EXTC" {% if selected_branch == 'EXTC' %}selected{% endif %}>EXTC</option>
+                        </select>
+                    </div>
+                    <div class="year">
+                        <label for="year">Select Year:</label>
+                        <select name="year" id="year">
+                            <option value="">--Select Year--</option>
+                            {% for y in years %}
+                                <option value="{{ y }}" {% if selected_year == y %}selected{% endif %}>{{ y }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="filter_btn" type="submit">Filter</button>
+                </form>
+            </div>
+            <form action="{% url 'ty_add_grp_no_grp_idea' %}" method="get">
+                <button type="submit" class="add_idea_btn">Add Project Idea</button>
+            </form>
+        </div>
+
+        <br>
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Group No.</th>
+                        <th>Group Idea</th>
+                        <th>Branch</th>
+                        <th>Year</th>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Substantial current and good quality literature (10)</th>
+                        <th>Answering Questions Posed by Examiner (10)</th>
+                        <th>Presentation and communication skills (10)</th>
+                        <th>Quality of Research Paper (10)</th>
+                        <th>Teamwork and Collaboration</th>
+                        <th>Avg Teamwork</th>
+                        <th>Oral/Practical</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, evaluations in grouped_evaluations.items %}
+                        {% for evaluation in evaluations %}
+                            <tr>
+                                {% if forloop.first %}
+                                    <td rowspan="{{ evaluations|length }}">{{ evaluation.ty_idea_no.ty_grp_no }}</td>
+                                    <td rowspan="{{ evaluations|length }}">{{ evaluation.ty_idea_no.ty_idea }}</td>
+                                    <td rowspan="{{ evaluations|length }}">{{ evaluation.num01 }}</td>
+                                    <td rowspan="{{ evaluations|length }}">{{ evaluation.group_year }}</td>
+                                {% endif %}
+                                <td>{{ evaluation.group_name }}</td>
+                                <td>{{ evaluation.roll_no }}</td>
+                                <td>{{ evaluation.eval1_total }}</td>
+                                <td>{{ evaluation.eval2_total }}</td>
+                                <td>{{ evaluation.eval3_total }}</td>
+                                <td>{{ evaluation.eval4_total }}</td>
+                                <td>{{ evaluation.eval5_total }}</td>
+                                <td>{{ evaluation.calculate_teamwork }}</td>
+                                <td>{{ evaluation.oral_practical }}</td>
+                                <td class="actions">
+                                    <div class="button_up">
+                                        <a href="{% url 'ty_update_view' evaluation.id %}">Update</a>
+                                    </div>
+                                    |
+                                    <div class="button_del">
+                                        <a href="{% url 'ty_delete_view' evaluation.id %}">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rating Result</title>
+</head>
+<body>
+    <h1>Total Score</h1>
+    <p>Substantial current and good quality literature (10): {{ total_score_substantial }}</p>
+    <p>Answering Questions Posed by Examiner (10): {{ total_score_answering }}</p>
+    <p>Presentation and communication skills (10): {{ total_score_presentation }}</p>
+    <p>Quality of Research Paper  (10): {{ total_score_quality }}</p>
+    <p>Teamwork and Collaboration (10): {{ total_score_teamwork }}</p>
+    <a href="{% url 'rating_view' %}">Rate again</a>
+</body>
+</html>

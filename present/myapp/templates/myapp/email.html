@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absence Warning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+        }
+        .highlight {
+            color: #d9534f; /* Red color to highlight warning */
+            font-weight: bold;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-btn,
+        .submit-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-btn {
+            background-color: #5bc0de;
+            color: white;
+        }
+        .submit-btn {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Absence Notification</h1>
+    <p>Email: {{ email }}</p>
+    <p>Dear {{ name }},</p>
+
+    <p>We regret to inform you that you were <span class="highlight">absent</span> during the recent practical presentation held on <span class="highlight">{{ practical_date }}</span>.</p>
+
+    <p>As a result, you have been assigned a mark of <span class="highlight">0</span> for this practical.</p>
+
+    <p>If you have any questions or believe this is an error, please contact your course instructor immediately.</p>
+
+    <p>We strongly encourage you to ensure your presence in future practicals to avoid any further academic penalties.</p>
+
+    <p>Best regards,</p>
+
+    <div class="footer">
+        <p>This is an automated message. Please do not reply directly to this email.</p>
+    </div>
+</div>
+
+</body>
+</html>

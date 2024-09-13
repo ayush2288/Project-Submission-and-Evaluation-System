@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="{% static 'css/add_grp.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Form</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.enter_and_idea_grp_no{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+}
+.enter_and_idea_grp_no form{
+    margin-right: 20px;
+}
+
+.table-container td {
+    padding: 20px;
+    text-align: inherit;
+    place-items:inherit;
+
+  
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.actions .button_up, 
+.actions .button_del {
+    margin-bottom: 10px;
+}
+
+.actions .button_up a, 
+.actions .button_del a {
+    display: block;
+}
+
+
+
+
+
+
+
+
+.sy_grp_idea_no a{
+    color: white;
+}
+.sy_grp_idea_no{
+    background-color:  #007bff;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 30px;
+}
+.sy_grp_idea_no:hover{
+    background-color:  #0056b3;
+}
+.sy_grp_idea_no a:hover{
+    background-color:  #0056b3;
+    text-decoration: none;
+}
+
+/* Drop Down */ 
+.form_comtainer{
+    font-family: "Poppins", sans-serif;
+}
+.branch{
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    padding-right: 15px;
+
+}
+.year{
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+   
+}
+
+select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 12px;
+   
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.filter_btn{
+    width: 150px;
+    margin-right: 30px;
+
+
+   
+}
+
+
+.add_idea_btn{
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+/* Drop Down */
+
+
+
+.button_up a{
+    color: #037dc9;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button_up a:hover{
+    color: rgb(2, 60, 250);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.button_del a{
+    color: #f83340;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button_del a:hover{
+    color: #f83340;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-62 {
+    background: linear-gradient(to bottom right, #f83340, #f83340);
+    border: none;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+   
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    
+    text-align: center;
+    text-decoration: none;
+
+    white-space: nowrap;
+  }
+  .button-62 a{
+    color: white;
+    text-decoration: none;
+  }
+  .button-62 a:hover{
+    color: white;
+    text-decoration: none;
+  }
+
+.table-container {
+    width: 91%;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+ 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Center the row content */
+}
+
+th {
+    background-color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease; /* Add transition for hover effect */
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    /* background-color: #f9f9f9; */
+}
+
+tr:hover {
+    
+    transform: scale(1.01); /* Slight zoom-out effect */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-evaluation {
+    display: block;
+    text-align: right;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .add-evaluation {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .add-evaluation {
+        text-align: center;
+    }
+}

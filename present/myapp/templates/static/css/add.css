@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+.container {
+    width: 50% ;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Adjust spacing between the radio button and the label */
+}
+
+.radio-group div {
+    display: flex;
+    flex-direction: inherit;
+    width: 50px;
+   
+    padding: 5px;
+    margin-bottom: 10px; /* Space between each radio button */
+    justify-content: flex-start;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px; /* Space between the radio button and the label */
+    
+  
+}
+
+.radio-group label {
+    margin: 0; /* Remove any default margin for labels */
+    flex-shrink: 0; /* Prevent label from shrinking */
+    width: 100%; /* Make label take up the remaining space */
+    align-items: center;
+    margin: 10px;
+}
+
+.radio-group div {
+    width: 100%; /* Ensure all radio buttons have the same width */
+}
+
+.radio-group div input {
+    flex-shrink: 0; /* Prevent radio button from shrinking */
+}
+
+.container h3 {
+    margin-top: 20px;
+  
+    font-size: 1.2em; /* Slightly larger font size for section titles */
+    color: #333; /* Darker color for section titles */
+}
+
+
+
+
+
+
+
+.container {
+   width: 60%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: black;
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+label {
+    display: block;
+   
+    font-weight: 500;
+    font-size: 1em;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+
+
+
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #df0000;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul.errorlist {
+    color: #d9534f;
+  
+    padding: 0;
+    list-style: none;
+    font-size: 0.95em;
+}

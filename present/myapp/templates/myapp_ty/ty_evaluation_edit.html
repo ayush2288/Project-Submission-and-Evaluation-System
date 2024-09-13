@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Group Evaluation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Group Evaluation</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            <p>
+                <label for="id_ty_idea_no">Select Idea No:</label>
+                <select name="ty_idea_no" id="id_ty_idea_no" required>
+                    <option value="">Select an Idea No</option>
+                    {% for idea in form.ty_idea_no.field.queryset %}
+                        <option value="{{ idea.pk }}" {% if form.ty_idea_no.value == idea.pk %}selected{% endif %}>
+                            {{ idea.ty_grp_no }} - {{ idea.ty_idea }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </p>
+
+            <p>
+                <label for="id_group_name">Group name:</label>
+                <input type="text" name="group_name" maxlength="255" required id="id_group_name" value="{{ form.group_name.value }}">
+            </p>
+
+            <p>
+                <label for="id_roll_no">Student Roll No:</label>
+                <input type="number" name="roll_no" required id="id_roll_no" value="{{ form.roll_no.value }}">
+            </p>
+
+            <p>
+                <label for="id_group_year">Group year:</label>
+                <input type="text" name="group_year" maxlength="4" required id="id_group_year" value="{{ form.group_year.value }}">
+            </p>
+
+            <p>
+                <label for="id_num01">Select Branch:</label>
+                {{ form.num01 }}
+            </p>
+
+            <p>
+                <label>
+                    <h3>Substantial current and good quality literature (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num1" value="5" {% if form.num1.value == '5' %}checked{% endif %}> Cites substantial current quality literature (5)</label>
+                    <label><input type="radio" name="num1" value="4" {% if form.num1.value == '4' %}checked{% endif %}> Cites reasonable quantity of current quality literature (4)</label>
+                    <label><input type="radio" name="num1" value="3" {% if form.num1.value == '3' %}checked{% endif %}> Cites current literature (3)</label>
+                    <label><input type="radio" name="num1" value="2" {% if form.num1.value == '2' %}checked{% endif %}> Does not cite any current quality literature (2)</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Understanding of Literature (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num2" value="5" {% if form.num2.value == '5' %}checked{% endif %}> Provides good understanding of literature cited (5)</label>
+                    <label><input type="radio" name="num2" value="4" {% if form.num2.value == '4' %}checked{% endif %}> Provides understanding of literature cited (4)</label>
+                    <label><input type="radio" name="num2" value="3" {% if form.num2.value == '3' %}checked{% endif %}> Exhibits poor understanding of literature cited (3)</label>
+                    <label><input type="radio" name="num2" value="2" {% if form.num2.value == '2' %}checked{% endif %}> Very poor in understanding literature cited (2)</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Answering Questions Posed by Examiner (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num21" value="10" {% if form.num21.value == '10' %}checked{% endif %}> Very good clarity about the subject matter</label>
+                    <label><input type="radio" name="num21" value="8" {% if form.num21.value == '8' %}checked{% endif %}> Somewhat good clarity</label>
+                    <label><input type="radio" name="num21" value="6" {% if form.num21.value == '6' %}checked{% endif %}> Not so good clarity</label>
+                    <label><input type="radio" name="num21" value="4" {% if form.num21.value == '4' %}checked{% endif %}> Very poor</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Presentation and Communication Skills (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num31" value="4" {% if form.num31.value == '4' %}checked{% endif %}> Written in own, grammatically correct language</label>
+                    <label><input type="radio" name="num31" value="3.2" {% if form.num31.value == '3.2' %}checked{% endif %}> Written in own language, has many grammatical errors</label>
+                    <label><input type="radio" name="num31" value="2.4" {% if form.num31.value == '2.4' %}checked{% endif %}> Language not good</label>
+                    <label><input type="radio" name="num31" value="1.6" {% if form.num31.value == '1.6' %}checked{% endif %}> Mostly copied</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Presentation Quality (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num32" value="4" {% if form.num32.value == '4' %}checked{% endif %}> Very good presentation</label>
+                    <label><input type="radio" name="num32" value="3.2" {% if form.num32.value == '3.2' %}checked{% endif %}> Somewhat good presentation</label>
+                    <label><input type="radio" name="num32" value="2.4" {% if form.num32.value == '2.4' %}checked{% endif %}> Messy presentation</label>
+                    <label><input type="radio" name="num32" value="1.6" {% if form.num32.value == '1.6' %}checked{% endif %}> Very poor presentation</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Format Adherence (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num33" value="2" {% if form.num33.value == '2' %}checked{% endif %}> Recommended format used</label>
+                    <label><input type="radio" name="num33" value="1.6" {% if form.num33.value == '1.6' %}checked{% endif %}> Mostly in recommended format</label>
+                    <label><input type="radio" name="num33" value="1.2" {% if form.num33.value == '1.2' %}checked{% endif %}> Many deviations from format</label>
+                    <label><input type="radio" name="num33" value="0.8" {% if form.num33.value == '0.8' %}checked{% endif %}> No format</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Communication Skills (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num41" value="10" {% if form.num41.value == '10' %}checked{% endif %}> Very good Communication Skill</label>
+                    <label><input type="radio" name="num41" value="8" {% if form.num41.value == '8' %}checked{% endif %}> Good Communication Skill</label>
+                    <label><input type="radio" name="num41" value="6" {% if form.num41.value == '6' %}checked{% endif %}> Poor Communication Skill</label>
+                    <label><input type="radio" name="num41" value="4" {% if form.num41.value == '4' %}checked{% endif %}> Very poor Communication Skill</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Quality of Research Paper (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num51" value="10" {% if form.num51.value == '10' %}checked{% endif %}> Excellent Quality</label>
+                    <label><input type="radio" name="num51" value="8" {% if form.num51.value == '8' %}checked{% endif %}> Good Quality</label>
+                    <label><input type="radio" name="num51" value="6" {% if form.num51.value == '6' %}checked{% endif %}> Average Quality</label>
+                    <label><input type="radio" name="num51" value="4" {% if form.num51.value == '4' %}checked{% endif %}> Poor Quality</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Timeliness of Submission (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num61" value="10" {% if form.num61.value == '10' %}checked{% endif %}> Submitted on time</label>
+                    <label><input type="radio" name="num61" value="8" {% if form.num61.value == '8' %}checked{% endif %}> Minor delays</label>
+                    <label><input type="radio" name="num61" value="6" {% if form.num61.value == '6' %}checked{% endif %}> Major delays</label>
+                    <label><input type="radio" name="num61" value="4" {% if form.num61.value == '4' %}checked{% endif %}> Submitted very late</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Clarity of Project Objectives (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num71" value="10" {% if form.num71.value == '10' %}checked{% endif %}> Very clear objectives</label>
+                    <label><input type="radio" name="num71" value="8" {% if form.num71.value == '8' %}checked{% endif %}> Clear objectives</label>
+                    <label><input type="radio" name="num71" value="6" {% if form.num71.value == '6' %}checked{% endif %}> Somewhat clear objectives</label>
+                    <label><input type="radio" name="num71" value="4" {% if form.num71.value == '4' %}checked{% endif %}> Unclear objectives</label>
+                </div>
+            </p>
+
+            <p>
+                <label for="id_oral_practical">Oral practical:</label>
+                <input type="number" name="oral_practical" required id="id_oral_practical" value="{{ form.oral_practical.value }}">
+            </p>
+
+            <button type="submit">Save</button>
+        </form>
+
+        <a href="{% url 'ty_evaluation_list' %}">Back to List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalize Idea</title>
+    <style>
+    
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+            color: #000000;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-bottom: 1.5rem;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Finalize the Idea for Group {{ group.get_grp_no }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="selected_idea">Select Idea:</label>
+            <select name="selected_idea" id="selected_idea">
+                {% for idea_value, idea_label in ideas %}
+                    <option value="{{ idea_value }}">{{ idea_label }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Finalize</button>
+        </form>
+    </div>
+</body>
+</html>

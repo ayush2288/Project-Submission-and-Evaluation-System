@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Evaluation</title>
+  
+</head>
+<body>
+    <div class="container">
+        <h1>Assign Marks</h1>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/add.css' %}">
+        {% if form.errors %}
+            <ul class="errorlist">
+                {% for field, errors in form.errors.items %}
+                    <li>{{ field }}: {{ errors }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.final_marks_evaluation }}
+            <br>
+            <br>
+            {{ form.final_marks_student }}
+            <h2>First Presentation Marks:</h2>
+            <h3>Is student present for first Presentation?</h3>
+            <div class="radio-group"><div>{{ form.num01 }}</div></div>
+            <h3>Substantial current and good quality literature (10)</h3>
+            <div class="radio-group"><div>{{ form.num1 }}</div></div>
+            <div class="radio-group"><div>{{ form.num2 }}</div></div>
+
+            <h3>Answering Questions Posed by Examiner (10)</h3>
+            <div class="radio-group"><div>{{ form.num21 }}</div></div>
+
+            <h3>Presentation and communication skills (10)</h3>
+            <div class="radio-group"><div>{{ form.num31 }}</div></div>
+            <div class="radio-group"><div>{{ form.num32 }}</div></div>
+            <div class="radio-group"><div>{{ form.num33 }}</div></div>
+            <div class="radio-group"><div>{{ form.num34 }}</div></div>
+
+            <h3>Quality of Research Paper (10)</h3>
+            <div class="radio-group"><div>{{ form.num41 }}</div></div>
+
+            <h3>Teamwork and Collaboration (10)</h3>
+            <div class="radio-group"><div>{{ form.num51 }}</div></div>
+            <div class="radio-group"><div>{{ form.num52 }}</div></div>
+            <div class="radio-group"><div>{{ form.num53 }}</div></div>
+            <div class="radio-group"><div>{{ form.num54 }}</div></div>
+          
+
+
+            <h2>Second Presentation Marks:</h2>
+            <h3>Is student present for Second Presentation?</h3>
+            <div class="radio-group"><div>{{ form.p2_num01 }}</div></div>
+            <h3>Substantial current and good quality literature (10)</h3>
+            <div class="radio-group"><div>{{ form.p2_num1 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num2 }}</div></div>
+
+            <h3>Answering Questions Posed by Examiner (10)</h3>
+            <div class="radio-group"><div>{{ form.p2_num21 }}</div></div>
+
+            <h3>Presentation and communication skills (10)</h3>
+            <div class="radio-group"><div>{{ form.p2_num31 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num32 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num33 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num34 }}</div></div>
+
+            <h3>Quality of Research Paper (10)</h3>
+            <div class="radio-group"><div>{{ form.p2_num41 }}</div></div>
+
+            <h3>Teamwork and Collaboration (10)</h3>
+            <div class="radio-group"><div>{{ form.p2_num51 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num52 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num53 }}</div></div>
+            <div class="radio-group"><div>{{ form.p2_num54 }}</div></div>
+          
+          
+
+
+
+
+            <h2>Thrid Presentation Marks:</h2>
+            <h3>Is student present for Thrid Presentation?</h3>
+            <div class="radio-group"><div>{{ form.p3_num01 }}</div></div>
+            <h3>Substantial current and good quality literature (10)</h3>
+            <div class="radio-group"><div>{{ form.p3_num1 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num2 }}</div></div>
+
+            <h3>Answering Questions Posed by Examiner (10)</h3>
+            <div class="radio-group"><div>{{ form.p3_num21 }}</div></div>
+
+            <h3>Presentation and communication skills (10)</h3>
+            <div class="radio-group"><div>{{ form.p3_num31 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num32 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num33 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num34 }}</div></div>
+
+            <h3>Quality of Research Paper (10)</h3>
+            <div class="radio-group"><div>{{ form.p3_num41 }}</div></div>
+
+            <h3>Teamwork and Collaboration (10)</h3>
+            <div class="radio-group"><div>{{ form.p3_num51 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num52 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num53 }}</div></div>
+            <div class="radio-group"><div>{{ form.p3_num54 }}</div></div>
+          
+          
+
+
+
+            <h2>Forth Presentation Marks:</h2>
+            <h3>Is student present for Forth Presentation?</h3>
+            <div class="radio-group"><div>{{ form.p4_num01 }}</div></div>
+            <h3>Substantial current and good quality literature (10)</h3>
+            <div class="radio-group"><div>{{ form.p4_num1 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num2 }}</div></div>
+
+            <h3>Answering Questions Posed by Examiner (10)</h3>
+            <div class="radio-group"><div>{{ form.p4_num21 }}</div></div>
+
+            <h3>Presentation and communication skills (10)</h3>
+            <div class="radio-group"><div>{{ form.p4_num31 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num32 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num33 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num34 }}</div></div>
+
+            <h3>Quality of Research Paper (10)</h3>
+            <div class="radio-group"><div>{{ form.p4_num41 }}</div></div>
+
+            <h3>Teamwork and Collaboration (10)</h3>
+            <div class="radio-group"><div>{{ form.p4_num51 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num52 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num53 }}</div></div>
+            <div class="radio-group"><div>{{ form.p4_num54 }}</div></div>
+          
+          
+
+
+
+
+
+            <h3>Oral/Practical Marks</h3>
+            {{ form.oral_practical.label_tag }} {{ form.oral_practical }}
+<br>
+<br>
+<br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

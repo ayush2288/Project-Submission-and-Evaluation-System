@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Marks Evaluation Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Marks Evaluation Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="substantial-current-quality-literature">
+                <h3 class="criteria_label">Substantial current and good quality literature (10)</h3>
+                <div class="form-group">
+                    <label for="id_criteria_1">{{ form1.criteria_1.label_tag }}</label>
+                    {{ form1.criteria_1 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_criteria_2">{{ form1.criteria_2.label_tag }}</label>
+                    {{ form1.criteria_2 }}
+                </div>
+            </div>
+            <div class="answering-questions-posed-by-examiner">
+                <h3 class="criteria_label">Answering Questions Posed by Examiner (10)</h3>
+                <div class="form-group">
+                    <label for="id_criteria_3">{{ form2.criteria_3.label_tag }}</label>
+                    {{ form2.criteria_3 }}
+                </div>
+            </div>
+            <div class="presentation-and-communication-skills">
+                <h3 class="criteria_label">Presentation and communication skills (10)</h3>
+                <div class="form-group">
+                    <label for="id_criteria_4">{{ form3.criteria_4.label_tag }}</label>
+                    {{ form3.criteria_4 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_criteria_5">{{ form3.criteria_5.label_tag }}</label>
+                    {{ form3.criteria_5 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_criteria_6">{{ form3.criteria_6.label_tag }}</label>
+                    {{ form3.criteria_6 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_criteria_7">{{ form3.criteria_7.label_tag }}</label>
+                    {{ form3.criteria_7 }}
+                </div>
+                <div class="Quality-of-Research-Paper">
+                    <h3 class="criteria_label">Quality of Research Paper (10)</h3>
+                    <div class="form-group">
+                        <label for="id_criteria_8">{{ form4.criteria_8.label_tag }}</label>
+                        {{ form4.criteria_8 }}
+                    </div>
+                </div>
+                <div class="Teamwork-and-Collaboration ">
+                    <h3 class="criteria_label">Teamwork and Collaboration (10)</h3>
+                    <div class="form-group">
+                        <label for="id_criteria_9">{{ form5.criteria_9.label_tag }}</label>
+                        {{ form5.criteria_9 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_criteria_10">{{ form5.criteria_10.label_tag }}</label>
+                        {{ form5.criteria_10 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_criteria_11">{{ form5.criteria_11.label_tag }}</label>
+                        {{ form5.criteria_11 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_criteria_12">{{ form5.criteria_12.label_tag }}</label>
+                        {{ form5.criteria_12 }}
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

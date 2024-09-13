@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Group Evaluation</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Group Marks Evaluation</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+
+            <p>
+                <label for="id_group_no">Group no:</label>
+                {{ form.group_no }}
+                <!-- <input type="number" name="group_no" required aria-invalid="true" id="id_group_no"> -->
+            </p>
+
+            <p>
+                <label for="id_group_name">Group name:</label>
+                {{ form.group_name }}
+                <!-- <input type="text" name="group_name" maxlength="255" required id="id_group_name"> -->
+            </p>
+
+            <p>
+                <label for="id_group_idea">Group idea:</label>
+                {{ form.group_idea }}
+                <!-- <input type="text" name="group_idea" maxlength="255" required id="id_group_idea"> -->
+            </p>
+
+            <p>
+                <label for="id_group_year">Group year:</label>
+                {{ form.group_year }}
+                <!-- <input type="text" name="group_year" maxlength="4" required id="id_group_year"> -->
+            </p>
+
+            <p>
+                <label for="id_num01">Select Branch:</label>
+                {{ form.num01 }}
+                <select name="num01" id="id_num01" required>
+                    <option value="None" {% if form.num01.value == 'None' %}selected{% endif %}>None</option>
+                    <option value="IT" {% if form.num01.value == 'IT' %}selected{% endif %}>IT</option>
+                    <option value="COMPS" {% if form.num01.value == 'COMPS' %}selected{% endif %}>COMPS</option>
+                    <option value="AIDS" {% if form.num01.value == 'AIDS' %}selected{% endif %}>AIDS</option>
+                    <option value="EXTC" {% if form.num01.value == 'EXTC' %}selected{% endif %}>EXTC</option>
+                </select>
+            </p>
+            
+
+           
+            <p>
+                <label>
+                    <h3>Substantial current and good quality literature (10) :</h3>
+                </label>
+                
+                <div class="radio-group">
+                    <label><input type="radio" name="num1" value="5"> Cites substantial current quality literature (5)</label>
+                    <label><input type="radio" name="num1" value="4"> Cites reasonable quantity of current quality literature (4)</label>
+                    <label><input type="radio" name="num1" value="3"> Cites current literature (3)</label>
+                    <label><input type="radio" name="num1" value="2" checked> Does not cite any current quality literature (2)</label>
+                </div>
+            </p>
+
+            <p>
+                
+                <div class="radio-group">
+                    <label><input type="radio" name="num2" value="5"> Provides good understanding of literature cited (5)</label>
+                    <label><input type="radio" name="num2" value="4"> Provides understanding of literature cited (4)</label>
+                    <label><input type="radio" name="num2" value="3"> Exhibits poor understanding of literature cited (3)</label>
+                    <label><input type="radio" name="num2" value="2" checked> Very poor in understanding literature cited (2)</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Answering Questions Posed by Examiner (10) :</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num21" value="10"> Very good clarity about the subject matter</label>
+                    <label><input type="radio" name="num21" value="8"> Somewhat good clarity</label>
+                    <label><input type="radio" name="num21" value="6"> Not so good clarity</label>
+                    <label><input type="radio" name="num21" value="4" checked> Very poor</label>
+                </div>
+            </p>
+
+            <p>
+                <label>
+                    <h3>Presentation skills (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num31" value="4"> Written in own, grammatically correct language</label>
+                    <label><input type="radio" name="num31" value="3.2" checked> Written in own language, has many grammatical errors</label>
+                    <label><input type="radio" name="num31" value="2.4"> Language not good</label>
+                    <label><input type="radio" name="num31" value="1.6"> Mostly copied</label>
+                </div>
+            </p>
+
+            <p>
+            
+                <div class="radio-group">
+                    <label><input type="radio" name="num32" value="4"> Very good presentation</label>
+                    <label><input type="radio" name="num32" value="3.2" checked> Somewhat good presentation</label>
+                    <label><input type="radio" name="num32" value="2.4"> Messy presentation </label>
+                    <label><input type="radio" name="num32" value="1.6"> Very poor presentation </label>
+                </div>
+            </p>
+
+            <p>
+               
+                <div class="radio-group">
+                    <label><input type="radio" name="num33" value="2"> Recommended format used</label>
+                    <label><input type="radio" name="num33" value="1.6" checked> Mostly in recommended format </label>
+                    <label><input type="radio" name="num33" value="1.2"> Many deviations from format</label>
+                    <label><input type="radio" name="num33" value="0.8"> No format </label>
+                </div>
+            </p>
+            <p>
+                <label>
+                    <h3>Communication skills (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num41" value="10">Very good Communication Skill</label>
+                    <label><input type="radio" name="num41" value="8"> Good Communication Skill</label>
+                    <label><input type="radio" name="num41" value="6"> Poor Communication Skill</label>
+                    <label><input type="radio" name="num41" value="4" checked> Very poor Communication Skill</label>
+                </div>
+            </p>
+           
+            <p>
+                <label>
+                    <h3>Quality of Research Paper (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num51" value="10"> International (Refereed) print Journal</label>
+                    <label><input type="radio" name="num51" value="8"> National (Refereed) print Journal</label>
+                    <label><input type="radio" name="num51" value="6"> International (Refereed) Conference</label>
+                    <label><input type="radio" name="num51" value="4" checked> National (Refereed) Conference and Online Journal</label>
+                </div>
+            </p>
+            <p>
+                <label>
+                    <h3>Teamwork and Collaboration (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num61" value="10"> Highly effective communication and Equal contribution from all members </label>
+                    <label><input type="radio" name="num61" value="8"> Good communication and good contribution from most members </label>
+                    <label><input type="radio" name="num61" value="6"> Adequate communication and uneven contribution</label>
+                    <label><input type="radio" name="num61" value="4" checked> Ineffective communication and poor contribution from members</label>
+                </div>
+            </p>
+            <p>
+                <label>
+                    <h3>Documentation and Reporting (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num71" value="10"> Very clear, concise, well organized and logical </label>
+                    <label><input type="radio" name="num71" value="8"> Mostly clear, concise and organized</label>
+                    <label><input type="radio" name="num71" value="6"> Somewhat clear, concise and organized</label>
+                    <label><input type="radio" name="num71" value="4" checked> Lacks clarity and conciseness and Poorly organized</label>
+                </div>
+            </p>
+
+       
+            <p>
+                <label>
+                    <h3>Originality (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num81" value="10"> Highly innovative and original </label>
+                    <label><input type="radio" name="num81" value="8"> Some innovation and originality</label>
+                    <label><input type="radio" name="num81" value="6"> Minimal innovation and originality</label>
+                    <label><input type="radio" name="num81" value="4" checked> Lacks innovation and originality</label>
+                </div>
+            </p>
+
+       
+            <p>
+                <label>
+                    <h3>Creativity (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num91" value="10">Demonstrates exceptional creativity</label>
+                    <label><input type="radio" name="num91" value="8">Shows good creativity</label>
+                    <label><input type="radio" name="num91" value="6"> Demonstrates average creativity</label>
+                    <label><input type="radio" name="num91" value="4" checked> Lacks creativity</label>
+                </div>
+            </p>
+       
+            <p>
+                <label>
+                    <h3>Design and Technical Feasibility (10):</h3>
+                </label>
+                <div class="radio-group">
+                    <label><input type="radio" name="num101" value="10"> Design is highly effective and it is highly feasible and practical </label>
+                    <label><input type="radio" name="num101" value="8"> Design is mostly effective and technically feasible and practical</label>
+                    <label><input type="radio" name="num101" value="6"> Design is somewhat effective and feasibility is questionable</label>
+                    <label><input type="radio" name="num101" value="4" checked> Design is ineffective and neither feasible nor practical</label>
+                </div>
+            </p>
+
+       
+        
+            <p>
+                <label for="id_oral_practical">Oral practical:</label>
+             
+                <input type="number" name="oral_practical"  required id="id_oral_practical">
+            </p>
+          
+            <button type="submit">Save</button>
+        </form>
+
+        <a href="{% url 'ly_evaluation_list' %}">Back to List</a>
+    </div>
+</body>
+</html>
